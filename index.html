@@ -8,7 +8,7 @@
    </head>
 <body>
     <div class="video-container">
-        <video  autoplay muted loop>
+        <video class="my-video" autoplay  loop>
             <source src="videos/video1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -23,7 +23,7 @@
         // Hide the overlay after 1 minute (60000 milliseconds)
         setTimeout(function() {
             document.getElementById('overlay').style.display = 'none';
-        }, 60000); // 30000 ms = 1 minute
+        }, 3000); // 30000 ms = 1 minute
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
