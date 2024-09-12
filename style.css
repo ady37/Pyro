@@ -45,4 +45,18 @@ video {
 .overlay p {
     font-size: 1.5rem;
 }
-
+.btn {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+}
