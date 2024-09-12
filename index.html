@@ -39,7 +39,7 @@
             video.volume = 1;    // Set volume to full
             video.play().then(() => {
                 // Hide the overlay once video starts playing
-                document.querySelector('.overlay').style.display = 'none';
+                document.querySelector('.btn').style.display = 'none';
             }).catch(error => {
                 console.error('Error playing the video with sound:', error);
             });
