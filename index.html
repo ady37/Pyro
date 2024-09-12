@@ -8,7 +8,7 @@
    </head>
 <body>
     <div class="video-container">
-        <video class="my-video" class="video-js" autoplay muted loop >
+        <video autoplay="" controls="" loop="">
             <source src="videos/video1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -18,7 +18,7 @@
         <h1>Pyro</h1>
         <p>Immersive Video Experience</p>
     </div>
-    <div class="btn"> <button id="playButton">Click to Play with Sound</button></div>
+  
    
     <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
     <script>
@@ -29,23 +29,7 @@
     </script>
     
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var video = document.getElementById('my-video');
-        var playButton = document.getElementById('playButton');
 
-        playButton.addEventListener('click', function() {
-            video.muted = false; // Unmute the video
-            video.volume = 1;    // Set volume to full
-            video.play().then(() => {
-                // Hide the overlay once video starts playing
-                document.querySelector('.overlay').style.display = 'none';
-            }).catch(error => {
-                console.error('Error playing the video with sound:', error);
-            });
-        });
-    });
-</script>
 
 </body>
 </html>
