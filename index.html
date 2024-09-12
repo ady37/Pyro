@@ -8,16 +8,18 @@
    </head>
 <body>
     <div class="video-container">
-        <video class="my-video" autoplay  loop>
+        <video class="my-video" class="video-js" autoplay muted loop >
             <source src="videos/video1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
-
+    
     <div class="overlay" id="overlay">
         <h1>Pyro</h1>
         <p>Immersive Video Experience</p>
     </div>
+    <div class="btn"> <button id="playButton">Click to Play with Sound</button></div>
+   
     <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
     <script>
         // Hide the overlay after 1 minute (60000 milliseconds)
@@ -25,13 +27,25 @@
             document.getElementById('overlay').style.display = 'none';
         }, 3000); // 30000 ms = 1 minute
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var player = videojs('my-video');
-            player.muted(false); // Ensure the video is not muted
-            player.volume(1); // Set volume to 100%
+    
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var video = document.getElementById('my-video');
+        var playButton = document.getElementById('playButton');
+
+        playButton.addEventListener('click', function() {
+            video.muted = false; // Unmute the video
+            video.volume = 1;    // Set volume to full
+            video.play().then(() => {
+                // Hide the overlay once video starts playing
+                document.querySelector('.overlay').style.display = 'none';
+            }).catch(error => {
+                console.error('Error playing the video with sound:', error);
+            });
         });
-    </script>
+    });
+</script>
 
 </body>
 </html>
