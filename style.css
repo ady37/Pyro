@@ -1,6 +1,6 @@
 /* General Styles */
 body, html {
-    display:flex;
+  
     margin: 0;
     padding: 0;
     height: 100%;
@@ -11,6 +11,7 @@ body, html {
 /* Fullscreen Video Container */
 
 .video-container {
+    display:flex;
     position: absolute;
     top: 0;
     left: 0;
