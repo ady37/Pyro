@@ -1,5 +1,6 @@
 /* General Styles */
 body, html {
+    display:flex;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -50,7 +51,7 @@ video {
 .container{
     position:absolute;
     top:80% ;
-    left: 50%;
+    left:45%;
     height:auto;
     display:flex;
     justify-content:center ;
