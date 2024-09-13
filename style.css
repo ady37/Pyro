@@ -11,7 +11,7 @@ body, html {
 /* Fullscreen Video Container */
 
 .video-container {
-    display:flex;
+   
     position: absolute;
     top: 0;
     left: 0;
@@ -52,7 +52,7 @@ video {
 .container{
     position:absolute;
     top:80% ;
-   left:45%;
+   left:50%;
    height:auto;
     display:flex;
     justify-content:center ;
