@@ -10,6 +10,9 @@ body, html {
    
   
 }
+html{
+    scroll-behavior:smooth;
+}
 
 /* Fullscreen Video Container */
 #myVideo{
