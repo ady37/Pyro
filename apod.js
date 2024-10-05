@@ -1,8 +1,8 @@
 "use strict"
 //returns date string in YYYY-MM-DD format
 const getDateString=date=>
-    `${date.getFullYear()}-${date.getMonth()+1}-${(date.getDate)}`;
-const displayPicture=>{
+    `${date.getFullYear()}-${date.getMonth()+1}-${(date.getDate())}`;
+const displayPicture=data=>{
     let html="";
     if(data.error){
         html+=`<span class="error">${data.error.msg}</span>`;
@@ -13,7 +13,7 @@ const displayPicture=>{
 
     }
     else{
-        html+='<h3>${data.title}</h3>';
+        html+=`<h2>${data.title}</h2>`;
         const width=700;
         switch(data.media_type){
             case "image":
@@ -41,11 +41,30 @@ const displayError=error=>{
     let html=`<span class="error">${error.message}</span>`;
     $("#display").html(html);
 };
-$(document).ready()=>{
+$(document).ready(()=>{
 const today=new Date();
-let dataStr=getDateString(today);
+let dateStr=getDateString(today);
 const dateTextbox=$("#date");
 dateTextbox.val(dateStr);
 dateTextbox.focus();
+$("#view_button").click(()=>{
+    dateStr=$("#date").val();
+    const dateObj=new Date(dateStr);
+    if(dateObj=="Invalid Date")
+    {
+        const msg="Please enter valid date in YYYY-MM-DD format.";
+        $("#display").html(`<span class="error">${msg}</span>`);
+    }
+    else{
+        dateStr=getDateString(dateObj);
 
-};
+        const domain=`https://api.nasa.gov/planetary/apod`;
+        const request=`?api_key=UTbfaRS1PsJ6gvBEbhcXYRduMu89vxqV6KRI6bit&date=${dateStr}`;
+        const url=domain+request;
+        fetch(url).then(response=>response.json()).then(json=>displayPicture(json)).
+        catch(e=>displayError(e));
+    }
+    $("#date").focus();
+});
+
+});

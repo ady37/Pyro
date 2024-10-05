@@ -220,6 +220,7 @@ video {
   .hero{
     top:0;
   }
+ 
   .content {
     position: fixed;
     bottom: 0;
@@ -245,4 +246,7 @@ video {
   #myBtn:hover {
     background: #ddd;
     color: black;
+  }
+  .logo{
+    color:white;
   }
