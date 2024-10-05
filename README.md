@@ -7,7 +7,7 @@
 ![Static Badge](https://img.shields.io/badge/Collage-Music-black)
 
 
-[![Pyro Immersive Experience](images/PyroImmersive_Experience.png)](ady37.github.io/Pyro/)
+[![Pyro Immersive Experience](images/PyroImmersive_Experience.png)](https://ady37.github.io/Pyro/)
 
 
 ## Topic : Symphony of the Stars: Harmonizing James Webb Telescope in Music and Images
